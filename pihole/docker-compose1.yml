@@ -1,0 +1,19 @@
+# Die Docker-Compose-Zusammenstellung für Pihole (httpshub.docker.comrpiholepihole)
+services
+  pihole
+    container_name pihole
+    image piholepiholelatest
+    ports
+      - 5353tcp
+      - 5353udp
+      - 6767udp
+      - 8080tcp
+    environment
+      TZ 'EuropeBerlin'
+      # WEBPASSWORD 'set a secure password here or it will be random'
+    volumes
+      - '.etc-piholeetcpihole'
+      - '.etc-dnsmasq.detcdnsmasq.d'
+    cap_add
+      - NET_ADMIN
+    restart unless-stopped

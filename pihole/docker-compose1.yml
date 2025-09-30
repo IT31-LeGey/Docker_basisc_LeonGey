@@ -1,19 +1,26 @@
-# Die Docker-Compose-Zusammenstellung für Pihole (httpshub.docker.comrpiholepihole)
-services
-  pihole
-    container_name pihole
-    image piholepiholelatest
-    ports
-      - 5353tcp
-      - 5353udp
-      - 6767udp
-      - 8080tcp
-    environment
-      TZ 'EuropeBerlin'
-      # WEBPASSWORD 'set a secure password here or it will be random'
-    volumes
-      - '.etc-piholeetcpihole'
-      - '.etc-dnsmasq.detcdnsmasq.d'
-    cap_add
+# Docker-Compose-Datei für Pi-hole
+version: "3.8"
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      # Port 67 wird für DHCP benötigt. Nur aktivieren, wenn du den DHCP-Server von Pi-hole nutzen willst.
+      # - "67:67/udp" 
+      - "80:80/tcp"
+    environment:
+      TZ: 'Europe/Berlin'
+      # 🔑 WICHTIG: Setze hier ein sicheres Passwort!
+      # Entferne das '#' vor WEBPASSWORD und ersetze 'DEIN_PASSWORT'.
+      WEBPASSWORD: 'DEIN_PASSWORT'
+    volumes:
+      # Die Syntax ist './host-ordner/:/container-pfad/'
+      - './etc-pihole/:/etc/pihole/'
+      - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+    # Notwendig, damit Pi-hole das Netzwerk vollständig verwalten kann
+    cap_add:
       - NET_ADMIN
-    restart unless-stopped
+    restart: unless-stopped

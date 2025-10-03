@@ -3,8 +3,11 @@ services:
   nginx:
     image: nginx:latest
     container_name: my-nginx-container
-    ports:
-      - "8080:80" # Beispiel-Port
-    volumes:
-      # Stellt sicher, dass diese Zeile genau so aussieht
-      - ./nginx.conf:/etc/nginx/nginx.conf
+     ports:
+      - "8080:80"
+    # !Volumes deaktiviert!
+    # volumes:
+    #   - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    #   - ./html:/usr/share/nginx/html
+    restart: always
+      

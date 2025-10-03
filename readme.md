@@ -61,3 +61,15 @@ Das ist definitiv Geschmachssache und hängt von der Umgebung ab. Wenn man mehr 
 
 
 # Docker_basisc_LeonGey
+
+##Pi-hole
+Pi-hole ist ein Werbeblocker für Ihr gesamtes Netzwerk. Anstatt auf jedem Gerät eine eigene Software zu installieren, filtert Pi-hole den Datenverkehr zentral für alle verbundenen Geräte. Es funktioniert, indem es Anfragen an bekannte Werbe- und Tracking-Domains blockiert, bevor sie überhaupt auf Ihrem Gerät ankommen.
+
+##Watchtower
+Watchtower hält Ihre Docker-Anwendungen automatisch auf dem neuesten Stand. Das Tool behält die von Ihnen genutzten Docker-Images im Auge und sobald eine neue Version veröffentlicht wird, startet es Ihre Container selbstständig mit dem aktuellen Image neu.
+
+##Nginx
+Nginx ist ein leistungsstarkes und flexibles Werkzeug für Webanwendungen. Hauptsächlich wird es als schneller Webserver genutzt, der Webseiten ausliefert. Es kann aber auch als intelligenter Vermittler (Reverse Proxy) den Datenverkehr zu Ihren Anwendungen steuern, die Last auf mehrere Server verteilen (Load Balancer) oder Inhalte zwischenspeichern, um alles zu beschleunigen.
+
+##Portainer
+Portainer vereinfacht die Verwaltung von Container-Systemen wie Docker und Kubernetes durch eine benutzerfreundliche, grafische Oberfläche. Anstatt Befehle in eine Kommandozeile tippen zu müssen, können Sie Ihre Container, Anwendungen und Netzwerke bequem über ein übersichtliches Dashboard im Webbrowser steuern und im Blick behalten.

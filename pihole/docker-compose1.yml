@@ -1,8 +1,3 @@
-# Docker-Compose-Datei für Pi-hole
-version: "3.8"
-
-services:
-  pihole:
 # Die Docker-Compose-Zusammenstellung für Pihole (https://hub.docker.com/r/pihole/pihole)
 services:
   pihole:
